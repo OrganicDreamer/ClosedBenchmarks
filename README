@@ -1,0 +1,86 @@
+closed_benchmark.pl -- A closed benchmarks generator
+----------------------------------------------------------------------
+
+closed_benchmark.pl is a free, open source script for creating closed benchmarks
+to test network community detection algorithms.
+
+Closed Benchmarks properties are described in detail in:
+
+  Aldecoa R, Marín I (2012)
+  Closed benchmarks for network community structure characterization
+  Physical Review E 85, 026109 
+
+
+Version
+=======
+
+closed_benchmark.pl 1.0
+
+
+License
+=======
+
+Copyright (C) 2013  Rodrigo Aldecoa and Ignacio Marín
+This script is distributed under the GNU General Public License
+version 3.0 (GPLv3). This license can be found online at
+http://www.opensource.org/licenses/gpl-3.0.html.
+
+
+Files
+=====
+
+In this distribution you will find the following files:
+
+README			- This file
+closed_benchmark.pl	- The main Perl script
+gpl.txt			- Description of the license
+network1000.pairs	- Input network sample file
+			  (network of 1000 nodes with clear 
+			  community structure)
+network1000.comm	- Distribution of nodes per community
+
+
+Usage
+=====
+
+./closed_benchmark.pl -g graph_file -c comm_file -p number_of_points
+
+Options:
+    -h   --help           this message
+    -g   --graph_file 	  file containing the input network to be converted
+    -c   --comm_file      file containing the distribution of 
+			  nodes per communities
+    -p   --points         The program will print a certain number of 
+			  intermediate networks during the conversion
+    -w   --weighted       use this flag if dealing with a weighted graph
+    -d   --directed       use this flag if dealing with a directed graph 
+			  (still in Beta)
+
+
+Example:
+./closed_benchmark.pl -g network1000.pairs -c network1000.comm -p 99
+
+This command creates, starting from the sample files, a closed benchmark with 
+99 intermediate points (from 0 to 100)
+
+
+Output files
+=============
+
+The execution of the script creates the following files:
+
+- graph_file_initial.comm	file containing the initial partition 
+				(distribution of nodes per community)
+- graph_file_final.comm		file containing the final partition
+- graph_file_percent.pairs	one file for each of the intermediate points.
+				It contains a network (characterized by the 
+				percentage of links rewired at that point)
+
+
+Resources. Report bugs or suggestions
+=====================================
+
+* Homepage: http://sourceforge.net/projects/closedbenchmark/
+
+* Email: Rodrigo Aldecoa <raldecoa@ibv.csic.es>
+	 Ignacio Marín   <imarin@ibv.csic.es>
