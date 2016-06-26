@@ -12,7 +12,7 @@ load_closed_bench <- function()
   
   nets<-list()
   
-  #start from 4th file in file names, where network files start to where they end
+  #start from 4th file in file names, where network files start to where they end, will vary depending on what directory looks like
   for (k in 6:(length(all_files)-2))
     {
     
