@@ -3,6 +3,7 @@ colb<-c()
 result<-c()
 load("COMPLETE CLOSED BENCHMARK.dat")
 
+
 #loop through all the networks for a single LFR benchmark
 for (i in 1:length(nets))
 {
