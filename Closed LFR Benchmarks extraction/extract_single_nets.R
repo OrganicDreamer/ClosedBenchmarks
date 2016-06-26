@@ -1,6 +1,5 @@
 #Extract all intermediate benchmarks for each network
 
-
 extract_single_nets<-function()
 
 {
